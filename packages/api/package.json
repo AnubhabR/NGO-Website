@@ -1,0 +1,13 @@
+{
+  "name": "@ngo-website/api",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rm -rf dist/"
+  },
+  "dependencies": {
+    "@ngo-website/shared": "workspace:*"
+  }
+}
