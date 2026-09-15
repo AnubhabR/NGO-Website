@@ -5,6 +5,8 @@ export interface ShowcaseImage {
   alt: string;
 };
 
+// TODO: remove hardcoded `length`, probably pass length as env var
+ 
 export const showcaseImages: ShowcaseImage[] = Array.from(
   { length: 5 },
   (_, i) => ({
