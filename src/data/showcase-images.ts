@@ -5,7 +5,10 @@ export interface ShowcaseImage {
   alt: string;
 };
 
-export const images = Array.from(
+export const showcaseImages: ShowcaseImage[] = Array.from(
   { length: 5 },
-  (_, i) => assetUrl(`showcase-image/${i + 1}`)
-)
+  (_, i) => ({
+    url: assetUrl(`showcase-images/${i + 1}.png`),
+    alt: `Showcase image ${i + 1}`,
+  }),
+);
