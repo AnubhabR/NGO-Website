@@ -10,6 +10,7 @@ const menuItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Initiatives', href: '#initiatives' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Locations', href: '#locations' },
     { name: 'Contact', href: '#contact' },
 ]

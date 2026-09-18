@@ -246,28 +246,6 @@ export default function HeroSection() {
                     </div>
                 </section>
 
-                <section className="bg-primary/5 py-24">
-                    <div className="mx-auto max-w-7xl px-6">
-                        <div className="mx-auto max-w-2xl text-center">
-                            <p className="text-sm font-medium uppercase tracking-[0.28em] text-primary">What People Are Saying</p>
-                            <h2 className="mt-4 text-3xl font-semibold md:text-5xl">Voices from our supporters and volunteers.</h2>
-                        </div>
-
-                        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-                            {testimonials.map((item) => (
-                                <div key={item.name} className="rounded-[28px] border border-border bg-card p-8 shadow-sm">
-                                    <Quote className="size-10 text-primary/80" />
-                                    <p className="mt-5 text-lg leading-8 text-foreground">“{item.quote}”</p>
-                                    <div className="mt-6 border-t border-border pt-5">
-                                        <div className="font-semibold text-foreground">{item.name}</div>
-                                        <div className="text-sm text-muted-foreground">{item.role}</div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
                 <section id="volunteer" className="mx-auto max-w-7xl px-6 py-24">
                     <div className="overflow-hidden rounded-[32px] border border-primary/10 bg-card p-8 shadow-[0_30px_60px_rgba(64,81,39,0.12)] md:p-12">
                         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
