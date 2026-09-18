@@ -1,14 +1,1 @@
-import { StrictMode } from "react"
-import { createRoot } from "react-dom/client"
-
-import "./index.css"
-import App from "./App.tsx"
-import { ThemeProvider } from "@/components/theme-provider.tsx"
-
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  </StrictMode>
-)
+// Leftover Vite only file. The project is now using the Next.js App Router entry point in app/page.tsx.

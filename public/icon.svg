@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Nature Delight Foundation icon">
+  <rect width="64" height="64" rx="18" fill="#466551"/>
+  <path d="M32 15c-7 7-11 12-11 20 0 7 5 12 11 12s11-5 11-12c0-8-4-13-11-20zm0 10.5c3.6 3.9 5.5 7.6 5.5 11.5 0 4.1-2.6 7.5-5.5 7.5-2.9 0-5.5-3.4-5.5-7.5 0-3.9 1.9-7.6 5.5-11.5z" fill="#f8f5ef"/>
+  <circle cx="21" cy="23" r="3" fill="#c4a76d"/>
+  <circle cx="44" cy="22" r="2.5" fill="#c4a76d"/>
+</svg>
