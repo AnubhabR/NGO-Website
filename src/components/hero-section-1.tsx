@@ -80,26 +80,27 @@ export default function HeroSection() {
     return (
         <>
             <HeroHeader />
-            <main className="overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(139,170,104,0.15),transparent_35%)] text-foreground">
+            <main className="overflow-hidden bg-[radial-gradient(circle_at_top,rgba(139,170,104,0.15),transparent_35%)] text-foreground">
                 <section id="home" className="relative pt-28 md:pt-36">
-                    <div className="mx-auto max-w-7xl px-6">
-                        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-                            <div>
-                                <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+                    <div className="mx-auto max-w-7xl px-4 sm:px-6">
+                        <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+                            <div className="w-full">
+                                <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-2 text-xs font-medium text-primary sm:px-4 sm:text-sm">
                                     <Leaf className="size-4" />
                                     Enhancing Nature&apos;s Beauty since 2020
                                 </span>
 
-                                <h1 className="mt-7 max-w-xl text-4xl font-semibold tracking-tight text-foreground md:text-6xl">
+                                <h1 className="mt-7 max-w-full text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.04em] text-foreground sm:max-w-xl sm:text-5xl md:text-6xl">
                                     Restoring forests, protecting life, and building a greener tomorrow.
                                 </h1>
 
-                                <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+                                <p className="mt-5 max-w-full text-base text-muted-foreground sm:max-w-xl sm:text-lg">
                                     At Nature Delight Foundation, we focus on reforestation, environmental sustainability, and building a better future for our planet.
                                 </p>
 
-                                <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row">
+                                <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start">
                                     <Button
+                                        className="w-full sm:w-auto"
                                         nativeButton={false}
                                         render={
                                             <Link href="#volunteer">
@@ -110,33 +111,34 @@ export default function HeroSection() {
                                         }
                                     />
                                     <Button
+                                        className="w-full sm:w-auto"
                                         variant="outline"
                                         nativeButton={false}
                                         render={<Link href="#initiatives">Explore initiatives</Link>}
                                     />
                                 </div>
 
-                                <div className="mt-10 grid max-w-lg gap-6 sm:grid-cols-3">
+                                <div className="mt-10 grid max-w-lg gap-5 sm:grid-cols-3 sm:gap-6">
                                     {highlightStats.map((stat) => (
                                         <div key={stat.label}>
-                                            <div className="text-3xl font-semibold text-foreground">{stat.value}</div>
+                                            <div className="text-3xl font-semibold text-foreground sm:text-4xl">{stat.value}</div>
                                             <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
-                            <div className="relative">
-                                <div className="absolute -left-6 top-10 h-28 w-28 rounded-full bg-primary/20 blur-3xl" />
-                                <div className="absolute -right-6 bottom-8 h-32 w-32 rounded-full bg-accent/30 blur-3xl" />
-                                <div className="relative overflow-hidden rounded-[28px] border border-primary/10 bg-card p-3 shadow-[0_30px_70px_rgba(64,81,39,0.18)]">
+                            <div className="relative w-full">
+                                <div className="absolute -left-6 top-10 h-20 w-20 rounded-full bg-primary/20 blur-3xl sm:h-28 sm:w-28" />
+                                <div className="absolute -right-6 bottom-8 h-24 w-24 rounded-full bg-accent/30 blur-3xl sm:h-32 sm:w-32" />
+                                <div className="relative overflow-hidden rounded-[28px] border border-primary/10 bg-card p-2 shadow-[0_30px_70px_rgba(64,81,39,0.18)] sm:p-3">
                                     <div className="overflow-hidden rounded-[20px] bg-muted">
                                         <Image
                                             src={heroImage}
                                             alt="Nature Delight Foundation reforestation campaign"
                                             width={1200}
                                             height={900}
-                                            className="h-[540px] w-full object-cover"
+                                            className="h-[240px] w-full object-cover sm:h-[360px] lg:h-[540px]"
                                             priority
                                         />
                                     </div>
@@ -174,7 +176,7 @@ export default function HeroSection() {
                                 alt="Reforestation site"
                                 width={900}
                                 height={760}
-                                className="h-full min-h-[420px] w-full rounded-[20px] object-cover"
+                                className="h-full min-h-105 w-full rounded-[20px] object-cover"
                             />
                         </div>
 
@@ -221,7 +223,7 @@ export default function HeroSection() {
                                 alt="Forest restoration map and landscape"
                                 width={1200}
                                 height={760}
-                                className="h-[420px] w-full rounded-[22px] object-cover"
+                                className="h-105 w-full rounded-[22px] object-cover"
                             />
                         </div>
 

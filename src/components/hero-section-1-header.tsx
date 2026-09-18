@@ -64,13 +64,13 @@ export const HeroHeader = () => {
                             >
                                 <div
                                     aria-hidden
-                                    className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 size-4.5 m-auto flex flex-col items-center justify-center gap-[7px] duration-200"
+                                    className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 size-4.5 m-auto flex flex-col items-center justify-center gap-1.75 duration-200"
                                 >
                                     <span className="bg-foreground h-0.5 w-full rounded-full" />
                                     <span className="bg-foreground h-0.5 w-full rounded-full" />
                                 </div>
 
-                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 translate-x-[-3px] -rotate-180 scale-0 opacity-0 duration-200" />
+                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -translate-x-0.75 -rotate-180 scale-0 opacity-0 duration-200" />
                             </button>
                         </div>
 
