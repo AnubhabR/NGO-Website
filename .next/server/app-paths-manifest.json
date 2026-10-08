@@ -1,6 +1,7 @@
 {
   "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/api/gallery/[collection]/route": "app/api/gallery/[collection]/route.js",
   "/gallery/page": "app/gallery/page.js",
   "/page": "app/page.js"
 }

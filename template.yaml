@@ -1,0 +1,61 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: S3 gallery storage and per-collection manifest refresh Lambda
+
+Parameters:
+  GalleryPrefix:
+    Type: String
+    Default: galleries
+    Description: S3 prefix containing collection folders
+Resources:
+  GalleryBucket:
+    Type: AWS::S3::Bucket
+
+  GalleryRefreshFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: gallery-refresh.handler
+      Runtime: nodejs22.x
+      Timeout: 30
+      MemorySize: 256
+      Environment:
+        Variables:
+          GALLERY_PREFIX: !Ref GalleryPrefix
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action: s3:ListBucket
+              Resource: !GetAtt GalleryBucket.Arn
+              Condition:
+                StringLike:
+                  s3:prefix:
+                    - !Sub '${GalleryPrefix}/*'
+            - Effect: Allow
+              Action: s3:PutObject
+              Resource: !Sub '${GalleryBucket.Arn}/gallery-manifests/*'
+      Events:
+        GalleryImageCreated:
+          Type: S3
+          Properties:
+            Bucket: !Ref GalleryBucket
+            Events: s3:ObjectCreated:*
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: prefix
+                    Value: !Sub '${GalleryPrefix}/'
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        EntryPoints:
+          - src/lambda/gallery-refresh.ts
+        Format: esm
+        Target: es2022
+        Minify: true
+
+Outputs:
+  GalleryBucketName:
+    Description: Configure this bucket name as AWS_GALLERY_BUCKET on the OpenNext app Lambda
+    Value: !Ref GalleryBucket

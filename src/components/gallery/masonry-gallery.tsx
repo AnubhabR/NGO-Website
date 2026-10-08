@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
 import { ArrowUpRight, X } from 'lucide-react'
 
@@ -22,6 +21,28 @@ export function MasonryGallery({
   projects: GalleryProject[]
 }) {
   const [selectedProject, setSelectedProject] = useState<GalleryProject | null>(null)
+  const [loadingCollection, setLoadingCollection] = useState<string | null>(null)
+
+  async function openProject(project: GalleryProject) {
+    setSelectedProject(project)
+    setLoadingCollection(project.id)
+
+    try {
+      const response = await fetch(`/api/gallery/${encodeURIComponent(project.id)}`, { cache: 'no-store' })
+      if (!response.ok) return
+
+      const result = (await response.json()) as { images: string[] }
+      if (result.images.length > 0) {
+        setSelectedProject((current) =>
+          current?.id === project.id ? { ...current, images: result.images } : current,
+        )
+      }
+    } catch {
+      // Keep the local fallback images when S3 cannot be reached.
+    } finally {
+      setLoadingCollection((current) => (current === project.id ? null : current))
+    }
+  }
 
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
@@ -36,16 +57,14 @@ export function MasonryGallery({
           <button
             key={project.id}
             type="button"
-            onClick={() => setSelectedProject(project)}
+            onClick={() => void openProject(project)}
             className="group overflow-hidden rounded-[26px] border border-border bg-card text-left shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg"
             aria-label={`View project ${project.title}`}
           >
             <div className="overflow-hidden">
-              <Image
+              <img
                 src={project.coverImage}
                 alt={project.title}
-                width={1200}
-                height={900}
                 className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
               />
             </div>
@@ -80,17 +99,18 @@ export function MasonryGallery({
             <div className="border-b border-border bg-card p-5 md:p-6">
               <div className="text-[10px] uppercase tracking-[0.24em] text-primary">Project gallery</div>
               <h3 className="mt-2 text-2xl font-semibold text-foreground md:text-3xl">{selectedProject.title}</h3>
+              {loadingCollection === selectedProject.id ? (
+                <p className="mt-2 text-sm text-muted-foreground">Loading latest photos...</p>
+              ) : null}
             </div>
 
             <div className="max-h-[78vh] overflow-y-auto p-4 md:p-6">
               <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
                 {selectedProject.images.map((image, index) => (
                   <div key={`${selectedProject.id}-${index}`} className="mb-4 break-inside-avoid overflow-hidden rounded-[20px] border border-border bg-muted">
-                    <Image
+                    <img
                       src={image}
                       alt={`${selectedProject.title} photo ${index + 1}`}
-                      width={1200}
-                      height={index % 3 === 0 ? 1000 : index % 3 === 1 ? 760 : 900}
                       className="h-auto w-full object-cover"
                     />
                   </div>

@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+.open-next/
+*.tsbuildinfo
 
 # Editor directories and files
 .vscode/*
@@ -24,3 +26,4 @@ dist-ssr
 *.sw?
 
 .env*
+public/assets/gallery

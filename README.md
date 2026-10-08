@@ -66,35 +66,47 @@ export default function Page() {
 }
 ```
 
-## Using AWS S3 assets
+## Folder-based gallery
 
-The project already includes an asset helper in `src/lib/assets.ts`:
+Each collection has a matching folder in S3, for example:
 
-```ts
-import { assetUrl } from '@/lib/assets'
-
-const image = assetUrl('nature-delight/tree-plantation-drive.jpg')
+```text
+s3://your-gallery-bucket/galleries/tree-plantation-drive/photo-01.jpg
 ```
 
-Set the environment variable before running the app:
+An S3 `ObjectCreated` event runs the gallery refresh Lambda for the uploaded file's collection only. It rebuilds that collection's manifest under `gallery-manifests/`; the gallery API reads the manifest and returns short-lived signed URLs for its private images when the collection opens.
+
+Set these server-side environment variables:
+
+```text
+AWS_GALLERY_BUCKET=your-gallery-bucket
+```
+
+Deploy the upload-triggered Lambda and its bucket notification with `template.yaml` using AWS SAM (`npm run build:gallery-lambda`, then `sam deploy --guided`). The SAM `GalleryPrefix` parameter defaults to `galleries`. Set the output bucket name as `AWS_GALLERY_BUCKET` on the OpenNext app Lambda, and grant that role `s3:GetObject` on `galleries/*` and `gallery-manifests/*`; signed image URLs expire after one hour. The refresh Lambda's role is restricted to listing the configured gallery prefix and writing `gallery-manifests/*`; the SAM template provisions the private bucket and permissions. Do not put AWS credentials in `NEXT_PUBLIC_*` variables; Lambdas should use their execution roles.
+
+### Local fallback images
+
+Fallback assets live in `public/assets/gallery/`. Each collection has its own folder. Add fallback images there, then set that collection's `coverImage` and `images` paths in `src/data/gallery-projects.ts`. The shared `fallback.svg` is used until collection-specific images are added. The gallery keeps these local images when S3 is unconfigured or unavailable.
+
+Collection metadata and display titles are maintained in `src/data/gallery-projects.ts`.
+
+### Hero image fallback
+
+Place the local hero fallback at `public/forest-hero.svg` (served by the app as `/forest-hero.svg`). The homepage uses this file when `NEXT_PUBLIC_ASSETS_URL` is not configured. If you use a different filename or format, update the `heroImage` fallback path in `src/components/hero-section-1.tsx` to match.
+
+## AWS Lambda build
+
+The app uses OpenNext for AWS deployment. Build the Lambda artifacts with:
 
 ```bash
-NEXT_PUBLIC_ASSETS_URL=https://your-s3-bucket-url
+npm run build:lambda
 ```
 
-This will generate URLs like:
-
-```bash
-https://your-s3-bucket-url/nature-delight/tree-plantation-drive.jpg
-```
+This generates `.open-next/` for deployment through your AWS infrastructure (for example, CDK or SST). Run the build in Linux, WSL, or Linux CI; OpenNext's bundle step uses symlinks and may fail on Windows without symlink privileges.
 
 ## Gallery page
 
-The project gallery page is located at:
-
-- `app/gallery/page.tsx`
-
-You can update the `projects` array there to add or remove gallery entries.
+The gallery page is located at `app/gallery/page.tsx`; its project collections are supplied by `src/data/gallery-projects.ts`.
 
 ## Build
 
