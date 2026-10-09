@@ -27,3 +27,6 @@ dist-ssr
 
 .env*
 public/assets/gallery
+
+# Build artifacts
+.next/

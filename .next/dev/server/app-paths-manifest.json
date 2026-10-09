@@ -1,5 +1,0 @@
-{
-  "/api/gallery/[collection]/route": "app/api/gallery/[collection]/route.js",
-  "/gallery/page": "app/gallery/page.js",
-  "/page": "app/page.js"
-}

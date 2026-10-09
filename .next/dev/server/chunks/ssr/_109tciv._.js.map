@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/utso/Documents/College/NGO-Website/app/layout.tsx"],"sourcesContent":["import type { Metadata } from \"next\";\r\nimport \"./globals.css\";\r\n\r\nexport const metadata: Metadata = {\r\n  title: \"Nature Delight Foundation\",\r\n  description: \"A mission-driven NGO website\",\r\n  icons: {\r\n    icon: \"/icon.svg\",\r\n  },\r\n};\r\n\r\nexport default function RootLayout({ children }: { children: React.ReactNode }) {\r\n  return (\r\n    <html lang=\"en\" suppressHydrationWarning>\r\n      <body>{children}</body>\r\n    </html>\r\n  );\r\n}\r\n"],"names":["metadata","title","description","icons","icon","RootLayout","children","lang","suppressHydrationWarning"],"mappings":";;;;;;;;;AAGO,MAAMA,WAAqB;IAChCC,OAAO;IACPC,aAAa;IACbC,OAAO;QACLC,MAAM;IACR;AACF;AAEe,SAASC,WAAW,EAAEC,QAAQ,EAAiC;IAC5E,qBACE,8OAAC;QAAKC,MAAK;QAAKC,wBAAwB;kBACtC,cAAA,8OAAC;sBAAMF;;;;;;;;;;;AAGb"}},
-    {"offset": {"line": 45, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/utso/Documents/College/NGO-Website/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4HACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
-}
