@@ -22,6 +22,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { HeroHeader } from '@/components/hero-section-1-header'
 import { assetUrl } from '@/lib/assets'
+import { URLS } from '@/config'
 
 const isS3Configured = Boolean(process.env.NEXT_PUBLIC_ASSETS_URL)
 
@@ -88,7 +89,7 @@ export default function HeroSection() {
                                         className="w-full sm:w-auto"
                                         nativeButton={false}
                                         render={
-                                            <Link href="#volunteer">
+                                            <Link href={URLS.volunteering}>
                                                 <span className="inline-flex items-center gap-2">
                                                     Join us <ArrowRight className="size-4" />
                                                 </span>
@@ -245,12 +246,12 @@ export default function HeroSection() {
                             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                                 <Button
                                     nativeButton={false}
-                                    render={<Link href="#contact">Volunteer</Link>}
+                                    render={<Link href={URLS.volunteering}>Volunteer</Link>}
                                 />
                                 <Button
                                     variant="outline"
                                     nativeButton={false}
-                                    render={<Link href="#contact">Donate</Link>}
+                                    render={<Link href={URLS.donation}>Donate</Link>}
                                 />
                             </div>
                         </div>

@@ -5,6 +5,7 @@ import React from 'react'
 import Link from 'next/link'
 import { X, HeartHandshake } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { URLS } from '@/config'
 
 const menuItems = [
     { name: 'Home', href: '#home' },
@@ -115,7 +116,7 @@ export const HeroHeader = () => {
                                 <Button
                                     size="sm"
                                     nativeButton={false}
-                                    render={<Link href="#volunteer">Volunteer</Link>}
+                                    render={<Link href={URLS.volunteering}>Volunteer</Link>}
                                 />
                             </div>
                         </div>
