@@ -204,13 +204,18 @@ export default function HeroSection() {
 
                     <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
                         <div className="overflow-hidden rounded-[28px] border border-border bg-card p-3 shadow-sm">
-                            <Image
-                                src={galleryImages[1]}
-                                alt="Forest restoration map and landscape"
-                                width={1200}
-                                height={760}
-                                className="h-105 w-full rounded-[22px] object-cover"
-                            />
+                          {/* TODO: Replace with actual map location */}
+                          <iframe
+                            title="Nature Delight Foundation location in Warje, Pune"
+                            src="https://www.google.com/maps?q=Warje,Pune,Maharashtra,India&output=embed"
+                            width="00%"
+                            height="90%"
+                            style={{ border: 0 }}
+                            loading="lazy"
+                            allowFullScreen
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="w-full rounded-[22px]"
+                          />
                         </div>
 
                         <div className="space-y-6">
