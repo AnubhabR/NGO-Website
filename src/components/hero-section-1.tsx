@@ -76,7 +76,7 @@ export default function HeroSection() {
                                 </span>
 
                                 <h1 className="mt-7 max-w-full text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.04em] text-foreground sm:max-w-xl sm:text-5xl md:text-6xl">
-                                    Restoring forests, protecting life, and building a greener tomorrow.
+                                    Nature Delight Foundation
                                 </h1>
 
                                 <p className="mt-5 max-w-full text-base text-muted-foreground sm:max-w-xl sm:text-lg">
