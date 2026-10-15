@@ -71,16 +71,16 @@ export default function HeroSection() {
                     <div className="mx-auto max-w-7xl px-4 sm:px-6">
                         <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-[1.05fr_0.95fr]">
                             <div className="w-full">
-                                <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-2 text-xs font-medium text-primary sm:px-4 sm:text-sm">
+                                <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2.5 text-sm font-semibold text-primary sm:px-5 sm:text-base">
                                     <Leaf className="size-4" />
                                     Enhancing Nature&apos;s Beauty since 2020
                                 </span>
 
-                                <h1 className="mt-7 max-w-full text-[2.55rem] font-semibold leading-[1.02] tracking-[-0.04em] text-foreground sm:max-w-xl sm:text-5xl md:text-6xl">
+                                <h1 className="mt-7 max-w-full text-5xl font-semibold leading-[1.02] tracking-[-0.04em] text-foreground sm:max-w-xl sm:text-6xl md:text-7xl">
                                     Nature Delight Foundation
                                 </h1>
 
-                                <p className="mt-5 max-w-full text-base text-muted-foreground sm:max-w-xl sm:text-lg">
+                                <p className="mt-5 max-w-full text-lg leading-8 text-muted-foreground sm:max-w-xl sm:text-xl">
                                     At Nature Delight Foundation, we focus on reforestation, environmental sustainability, and building a better future for our planet.
                                 </p>
 
@@ -107,8 +107,8 @@ export default function HeroSection() {
                                 <div className="mt-10 grid max-w-lg gap-5 sm:grid-cols-3 sm:gap-6">
                                     {highlightStats.map((stat) => (
                                         <div key={stat.label}>
-                                            <div className="text-3xl font-semibold text-foreground sm:text-4xl">{stat.value}</div>
-                                            <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
+                                            <div className="text-4xl font-semibold text-foreground sm:text-5xl">{stat.value}</div>
+                                            <div className="mt-2 text-base text-muted-foreground sm:text-lg">{stat.label}</div>
                                         </div>
                                     ))}
                                 </div>
@@ -136,8 +136,8 @@ export default function HeroSection() {
 
                 <section id="initiatives" className="mx-auto max-w-7xl px-6 py-24">
                     <div className="mx-auto max-w-2xl text-center">
-                        <p className="text-sm font-medium uppercase tracking-[0.28em] text-primary">Methods of Reforestation</p>
-                        <h2 className="mt-4 text-3xl font-semibold md:text-5xl">A practical path from seed to thriving forest.</h2>
+                        <p className="text-base font-semibold uppercase tracking-[0.2em] text-primary">Methods of Reforestation</p>
+                        <h2 className="mt-4 text-4xl font-semibold md:text-6xl">A practical path from seed to thriving forest.</h2>
                     </div>
 
                     <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -146,9 +146,9 @@ export default function HeroSection() {
                                 <div className="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                                     <Icon className="size-5" />
                                 </div>
-                                <div className="mt-5 text-sm font-semibold uppercase tracking-[0.24em] text-primary/80">Step {index + 1}</div>
-                                <h3 className="mt-3 text-2xl font-semibold">{title}</h3>
-                                <p className="mt-3 text-base leading-7 text-muted-foreground">{description}</p>
+                                <div className="mt-5 text-base font-semibold uppercase tracking-[0.18em] text-primary">Step {index + 1}</div>
+                                <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">{title}</h3>
+                                <p className="mt-3 text-lg leading-8 text-muted-foreground">{description}</p>
                             </div>
                         ))}
                     </div>
@@ -167,9 +167,9 @@ export default function HeroSection() {
                         </div>
 
                         <div className="flex flex-col justify-center">
-                            <p className="text-sm font-medium uppercase tracking-[0.28em] text-primary">Our Mission</p>
-                            <h2 className="mt-4 text-3xl font-semibold md:text-5xl">Growing resilient ecosystems for the future.</h2>
-                            <p className="mt-5 text-lg text-muted-foreground">
+                            <p className="text-base font-semibold uppercase tracking-[0.2em] text-primary">Our Mission</p>
+                            <h2 className="mt-4 text-4xl font-semibold md:text-6xl">Growing resilient ecosystems for the future.</h2>
+                            <p className="mt-5 text-xl leading-8 text-muted-foreground">
                                 We work with communities, volunteers, and local stakeholders to restore native landscapes, improve biodiversity, and create long-term environmental resilience.
                             </p>
 
@@ -179,7 +179,7 @@ export default function HeroSection() {
                                     'Community-led sustainability education and action',
                                     'Long-term ecosystem monitoring and care',
                                 ].map((item) => (
-                                    <li key={item} className="flex items-center gap-3 text-base text-foreground">
+                                    <li key={item} className="flex items-start gap-3 text-lg leading-7 text-foreground">
                                         <span className="flex size-7 items-center justify-center rounded-full bg-primary/15 text-primary">
                                             <Check className="size-4" />
                                         </span>
@@ -194,10 +194,10 @@ export default function HeroSection() {
                 <section id="locations" className="mx-auto max-w-7xl px-6 py-24">
                     <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
                         <div>
-                            <p className="text-sm font-medium uppercase tracking-[0.28em] text-primary">Our Reforestation Locations</p>
-                            <h2 className="mt-4 text-3xl font-semibold md:text-5xl">Planting across communities in Maharashtra.</h2>
+                            <p className="text-base font-semibold uppercase tracking-[0.2em] text-primary">Our Reforestation Locations</p>
+                            <h2 className="mt-4 text-4xl font-semibold md:text-6xl">Planting across communities in Maharashtra.</h2>
                         </div>
-                        <Link href="#contact" className="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                        <Link href="#contact" className="inline-flex items-center gap-2 text-base font-semibold text-primary">
                             Connect with us <ArrowRight className="size-4" />
                         </Link>
                     </div>
@@ -220,12 +220,12 @@ export default function HeroSection() {
                                 { name: 'Local forest belts', area: 'Rural clusters', text: 'Volunteer-driven maintenance and long-term ecological monitoring.' },
                             ].map((site) => (
                                 <div key={site.name} className="rounded-3xl border border-border bg-card p-6">
-                                    <div className="flex items-center gap-2 text-primary">
-                                        <MapPin className="size-4" />
-                                        <span className="text-sm font-medium uppercase tracking-[0.2em]">{site.area}</span>
+                                    <div className="flex items-center gap-3 text-primary">
+                                        <MapPin className="size-5" />
+                                        <span className="text-base font-semibold uppercase tracking-[0.12em]">{site.area}</span>
                                     </div>
                                     <h3 className="mt-4 text-2xl font-semibold">{site.name}</h3>
-                                    <p className="mt-3 text-base text-muted-foreground">{site.text}</p>
+                                    <p className="mt-3 text-lg leading-7 text-muted-foreground">{site.text}</p>
                                 </div>
                             ))}
                         </div>
@@ -236,9 +236,9 @@ export default function HeroSection() {
                     <div className="overflow-hidden rounded-[32px] border border-primary/10 bg-card p-8 shadow-[0_30px_60px_rgba(64,81,39,0.12)] md:p-12">
                         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
                             <div>
-                                <p className="text-sm font-medium uppercase tracking-[0.28em] text-primary">Join Our Reforestation Effort!</p>
-                                <h2 className="mt-4 text-3xl font-semibold md:text-5xl">Help us restore ecosystems and protect wildlife.</h2>
-                                <p className="mt-5 max-w-xl text-lg text-muted-foreground">
+                                <p className="text-base font-semibold uppercase tracking-[0.2em] text-primary">Join Our Reforestation Effort!</p>
+                                <h2 className="mt-4 text-4xl font-semibold md:text-6xl">Help us restore ecosystems and protect wildlife.</h2>
+                                <p className="mt-5 max-w-xl text-xl leading-8 text-muted-foreground">
                                     Your contribution can make a difference. Volunteer with us and help plant the future of our planet.
                                 </p>
                             </div>
@@ -266,17 +266,17 @@ export default function HeroSection() {
                                     <Leaf className="size-5" />
                                 </div>
                                 <div>
-                                    <div className="text-lg font-semibold text-foreground">Nature Delight Foundation</div>
+                                    <div className="text-xl font-semibold text-foreground">Nature Delight Foundation</div>
                                 </div>
                             </div>
-                            <p className="mt-5 max-w-md text-base text-muted-foreground">
+                            <p className="mt-5 max-w-md text-lg leading-8 text-muted-foreground">
                                 We believe in protecting the environment through sustainable action, local participation, and reforestation at every scale.
                             </p>
                         </div>
 
                         <div>
-                            <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">Quick Links</h3>
-                            <ul className="mt-5 space-y-3 text-base text-foreground">
+                            <h3 className="text-base font-semibold uppercase tracking-[0.16em] text-foreground">Quick Links</h3>
+                            <ul className="mt-5 space-y-3 text-lg text-foreground">
                                 <li><Link href="#home">Home</Link></li>
                                 <li><Link href="#about">About</Link></li>
                                 <li><Link href="#initiatives">Initiatives</Link></li>
@@ -285,22 +285,22 @@ export default function HeroSection() {
                         </div>
 
                         <div>
-                            <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">Contact Us</h3>
-                            <ul className="mt-5 space-y-4 text-base text-foreground">
+                            <h3 className="text-base font-semibold uppercase tracking-[0.16em] text-foreground">Contact Us</h3>
+                            <ul className="mt-5 space-y-4 text-lg text-foreground">
                                 <li className="flex items-start gap-3">
-                                    <Phone className="mt-0.5 size-4 text-primary" />
+                                    <Phone className="mt-1 size-5 shrink-0 text-primary" />
                                     <span>+91 8087608729</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <Mail className="mt-0.5 size-4 text-primary" />
+                                    <Mail className="mt-1 size-5 shrink-0 text-primary" />
                                     <span>naturedelightfoundation@gmail.com</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <MapPin className="mt-0.5 size-4 text-primary" />
+                                    <MapPin className="mt-1 size-5 shrink-0 text-primary" />
                                     <span>Warje, Pune, Maharashtra</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <Clock3 className="mt-0.5 size-4 text-primary" />
+                                    <Clock3 className="mt-1 size-5 shrink-0 text-primary" />
                                     <span>Mon - Sat: 9AM - 7PM</span>
                                 </li>
                             </ul>
@@ -308,12 +308,12 @@ export default function HeroSection() {
                     </div>
 
                     <div className="border-t border-border">
-                        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 py-5 text-sm text-muted-foreground md:flex-row">
+                        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-5 px-6 py-6 text-base text-muted-foreground md:flex-row">
                             <p>© 2024 Nature Delight Foundation - All Rights Reserved.</p>
-                            <div className="flex items-center gap-4 text-foreground">
-                                <Link href="https://www.facebook.com" aria-label="Facebook" className="hover:text-primary"><Globe className="size-4" /></Link>
-                                <Link href="https://www.instagram.com" aria-label="Instagram" className="hover:text-primary"><MessageCircle className="size-4" /></Link>
-                                <Link href="mailto:naturedelightfoundation@gmail.com" aria-label="Mail" className="hover:text-primary"><Send className="size-4" /></Link>
+                            <div className="flex items-center gap-5 text-foreground">
+                                <Link href="https://www.facebook.com" aria-label="Facebook" className="hover:text-primary"><Globe className="size-5" /></Link>
+                                <Link href="https://www.instagram.com" aria-label="Instagram" className="hover:text-primary"><MessageCircle className="size-5" /></Link>
+                                <Link href="mailto:naturedelightfoundation@gmail.com" aria-label="Mail" className="hover:text-primary"><Send className="size-5" /></Link>
                             </div>
                         </div>
                     </div>

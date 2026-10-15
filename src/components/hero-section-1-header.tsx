@@ -54,8 +54,8 @@ export const HeroHeader = () => {
                                     <HeartHandshake className="size-5" />
                                 </div>
                                 <div className="flex flex-col leading-none">
-                                    <span className="text-base font-semibold tracking-wide text-foreground">Nature Delight</span>
-                                    <span className="text-[10px] uppercase tracking-[0.28em] text-muted-foreground">Foundation</span>
+                                    <span className="text-lg font-semibold tracking-wide text-foreground sm:text-xl">Nature Delight</span>
+                                    <span className="text-xs uppercase tracking-[0.24em] text-muted-foreground sm:text-sm">Foundation</span>
                                 </div>
                             </Link>
 
@@ -77,12 +77,12 @@ export const HeroHeader = () => {
                         </div>
 
                         <div className="absolute inset-0 m-auto size-fit max-lg:hidden">
-                            <ul className="flex gap-8 text-sm">
+                            <ul className="flex gap-8 text-base">
                                 {menuItems.map((item, index) => (
                                     <li key={index}>
                                         <Link
                                             href={item.href}
-                                            className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                                            className="text-muted-foreground hover:text-accent-foreground block text-base duration-150"
                                         >
                                             <span>{item.name}</span>
                                         </Link>
@@ -98,7 +98,7 @@ export const HeroHeader = () => {
                                         <li key={index}>
                                             <Link
                                                 href={item.href}
-                                                className="text-foreground block py-3 text-2xl font-medium"
+                                                className="text-foreground block py-3 text-2xl font-medium sm:text-3xl"
                                             >
                                                 <span>{item.name}</span>
                                             </Link>
@@ -110,12 +110,14 @@ export const HeroHeader = () => {
                                 <Button
                                     size="sm"
                                     variant="outline"
+                                    className="text-base"
                                     nativeButton={false}
                                     render={<Link href="#contact">Contact</Link>}
                                 />
                                 <Button
                                     size="sm"
                                     nativeButton={false}
+                                    className="text-base"
                                     render={<Link href={URLS.volunteering}>Volunteer</Link>}
                                 />
                             </div>

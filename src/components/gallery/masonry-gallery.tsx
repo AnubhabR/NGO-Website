@@ -47,9 +47,9 @@ export function MasonryGallery({
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
       <div className="mb-10 max-w-2xl">
-        <p className="text-sm font-medium uppercase tracking-[0.28em] text-primary">Gallery</p>
-        <h1 className="mt-4 text-3xl font-semibold text-foreground md:text-5xl">{title}</h1>
-        {description ? <p className="mt-4 text-lg text-muted-foreground">{description}</p> : null}
+        <p className="text-base font-semibold uppercase tracking-[0.2em] text-primary">Gallery</p>
+        <h1 className="mt-4 text-4xl font-semibold text-foreground md:text-6xl">{title}</h1>
+        {description ? <p className="mt-4 text-xl leading-8 text-muted-foreground">{description}</p> : null}
       </div>
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -71,13 +71,13 @@ export function MasonryGallery({
 
             <div className="flex items-end justify-between gap-4 p-5">
               <div>
-                <div className="text-[10px] uppercase tracking-[0.24em] text-primary">Project</div>
-                <h2 className="mt-2 text-xl font-semibold text-foreground">{project.title}</h2>
-                {project.summary ? <p className="mt-2 text-sm text-muted-foreground">{project.summary}</p> : null}
+                <div className="text-sm font-medium uppercase tracking-[0.18em] text-primary">Project</div>
+                <h2 className="mt-2 text-2xl font-semibold text-foreground sm:text-3xl">{project.title}</h2>
+                {project.summary ? <p className="mt-2 text-base leading-7 text-muted-foreground">{project.summary}</p> : null}
               </div>
 
               <span className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <ArrowUpRight className="size-4" />
+                <ArrowUpRight className="size-5" />
               </span>
             </div>
           </button>
@@ -97,10 +97,10 @@ export function MasonryGallery({
             </button>
 
             <div className="border-b border-border bg-card p-5 md:p-6">
-              <div className="text-[10px] uppercase tracking-[0.24em] text-primary">Project gallery</div>
-              <h3 className="mt-2 text-2xl font-semibold text-foreground md:text-3xl">{selectedProject.title}</h3>
+              <div className="text-sm font-medium uppercase tracking-[0.18em] text-primary">Project gallery</div>
+              <h3 className="mt-2 text-3xl font-semibold text-foreground md:text-4xl">{selectedProject.title}</h3>
               {loadingCollection === selectedProject.id ? (
-                <p className="mt-2 text-sm text-muted-foreground">Loading latest photos...</p>
+                <p className="mt-2 text-base leading-7 text-muted-foreground">Loading latest photos...</p>
               ) : null}
             </div>
 
