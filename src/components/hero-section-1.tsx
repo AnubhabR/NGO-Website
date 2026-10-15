@@ -54,21 +54,6 @@ const highlightStats = [
     { label: 'forest zones restored', value: '08' },
 ]
 
-const testimonials = [
-    {
-        quote:
-            'The reforestation efforts have brought new life to our community, improving air quality and providing a habitat for wildlife.',
-        name: 'John Doe',
-        role: 'Environmental Advocate',
-    },
-    {
-        quote:
-            'I’m so proud to be part of the Nature Delight Foundation’s reforestation initiative. It’s amazing to see the change we can make together.',
-        name: 'Jane Smith',
-        role: 'Volunteer',
-    },
-]
-
 const heroImage = isS3Configured ? assetUrl('nature-delight/banner.jpg') : '/forest-hero.svg'
 const galleryImages = [
     isS3Configured ? assetUrl('nature-delight/site-1.jpg') : '/forest-hero.svg',
